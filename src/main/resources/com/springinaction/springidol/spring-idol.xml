@@ -28,9 +28,11 @@
 	<bean id="piano" class="com.springinaction.springidol.Piano" />
 
 	<bean id="hank" class="com.springinaction.springidol.OneManBand">
-		<list>
-			<ref bean="piano" />
-			<ref bean="saxophone" />
-		</list>
+		<property name="instruments">
+			<list>
+				<ref bean="piano" />
+				<ref bean="saxophone" />
+			</list>
+		</property>
 	</bean>
 </beans>
