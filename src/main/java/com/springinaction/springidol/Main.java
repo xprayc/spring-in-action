@@ -1,15 +1,13 @@
-package com.springinaction.knights;
+package com.springinaction.springidol;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class KnightMain {
-
+public class Main {
 	public static void main(String[] args) throws Exception {
-
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"com/springinaction/knights/knights.xml")) {
-			Knight knight = (Knight) context.getBean("knight");
-			knight.embarkOnQuest();
+				"com/springinaction/springidol/spring-idol.xml")) {
+			Performer performer = context.getBean("poeticDuke", Performer.class);
+			performer.perform();
 		}
 	}
 }
