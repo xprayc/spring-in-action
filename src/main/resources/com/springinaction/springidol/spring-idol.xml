@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
 
 	<bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler">
 		<constructor-arg value="15" />
@@ -19,13 +25,17 @@
 	<bean id="auditorium" class="com.springinaction.springidol.Auditorium"
 		init-method="turnOnLights" destroy-method="turnOffLights" />
 
+
 	<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
 		<property name="song" value="Jingle Bells" />
-		<property name="instrument" ref="saxophone" />
+		<!-- <property name="instrument" ref="saxophone" /> -->
 	</bean>
 
 	<bean id="saxophone" class="com.springinaction.springidol.Saxophone" />
-	<bean id="piano" class="com.springinaction.springidol.Piano" />
+	<bean id="piano" class="com.springinaction.springidol.Piano">
+		<qualifier value="keyboard" />
+	</bean>
+	<bean id="guitar" class="com.springinaction.springidol.Guitar" />
 
 	<bean id="hank" class="com.springinaction.springidol.OneManBand">
 		<property name="instruments">

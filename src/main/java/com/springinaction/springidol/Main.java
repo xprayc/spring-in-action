@@ -8,6 +8,9 @@ public class Main {
 				"com/springinaction/springidol/spring-idol.xml")) {
 			Performer performer = context.getBean("poeticDuke", Performer.class);
 			performer.perform();
+			
+			Performer kenny = context.getBean("kenny", Performer.class);
+			kenny.perform();
 		}
 	}
 }
