@@ -2,7 +2,7 @@ package com.springinaction.springidol;
 
 public class PoeticJuggler extends Juggler {
 	private Poem poem;
-	
+
 	public PoeticJuggler(Poem poem) {
 		this.poem = poem;
 	}
@@ -12,7 +12,6 @@ public class PoeticJuggler extends Juggler {
 		this.poem = poem;
 	}
 
-	
 	@Override
 	public void perform() throws PerformanceException {
 		super.perform();
